@@ -1,0 +1,27 @@
+.result {
+    padding: 40px;
+
+    &__label {
+        display: block;
+        margin-bottom: 5px;
+        color: #888888;
+    }
+
+    &__final-button {
+        height: 44px;
+        padding: 0 20px;
+        font-size: 14px;
+        background: #ff6800;
+        color: #fff;
+        border: 1px solid #ff6800;
+        border-radius: 2px;
+    }
+
+    &__date {
+        width: 100%;
+    }
+
+    &__button-wrapper {
+        align-self: flex-end;
+    }
+}

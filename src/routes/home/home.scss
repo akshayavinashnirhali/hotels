@@ -1,0 +1,28 @@
+.home {
+    padding: 40px;
+    color: #888888;
+
+    &__row {
+        margin-bottom: 20px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 5px;
+        color: #888888;
+    }
+
+    &__buttons-wrapper {
+        padding-top: 20px;
+    }
+
+    &__final-button {
+        height: 44px;
+        padding: 0 20px;
+        background-color: #007fad;
+        color: #fff;
+        border: 1px solid #007fad;
+        border-bottom: 1px solid #005f81;
+        border-radius: 2px;
+    }
+}

@@ -1,0 +1,25 @@
+.button-group {
+    margin-top: 10px;
+
+    &__button {
+        height: 30px;
+        width: 30px;
+        background: white;
+        color: #888888;
+        font-size: 12px;
+        border: 1px solid;
+        border-radius: 50%;
+        margin-right: 7px;
+
+        &:focus,
+        &:hover,
+        &:active {
+            outline: none;
+        }
+
+        &--active {
+            background: #ff6800;
+            color: white;
+        }
+    }
+}
