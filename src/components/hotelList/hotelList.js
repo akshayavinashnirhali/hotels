@@ -18,7 +18,7 @@ class HotelList extends React.Component {
             return (
                 <div className="row hotel-list__row" key={index}>
                     <div className="col-md-3">
-                        <img className="hotel-list__image" src="" />
+                        <img className="hotel-list__image" src={hotel.image} />
                     </div>
                     <div className="col-md">
                         {stars}

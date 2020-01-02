@@ -1,14 +1,17 @@
 import axios from 'axios';
 import actionTypes from '../constants/actionTypes';
+import orientalImage from '../assets/images/oriental.jpg';
+import hayatImage from '../assets/images/hayat.jpg';
+import taajImage from '../assets/images/taaj.jpg';
 
 axios.defaults.baseURL = 'https://public-be.oski.io/';
 axios.defaults.headers.common['oski-tenantId'] = 'Demo';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const dummyData = [
-    { name: 'Oriental Hotel', location: 'Pune', price: '350', rating: 4 },
-    { name: 'Hyat Hotel', location: 'Mumbai', price: '750', rating: 3 },
-    { name: 'Taaj Hotel', location: 'Pune', price: '800', rating: 5 },
+    { name: 'Oriental Hotel', location: 'Pune', price: '350', rating: 4, image: orientalImage },
+    { name: 'Hyat Hotel', location: 'Mumbai', price: '750', rating: 3, image: hayatImage },
+    { name: 'Taaj Hotel', location: 'Pune', price: '800', rating: 5, image: taajImage },
 ];
 
 const getHotelResultsRequest = () => ({
