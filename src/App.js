@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.scss';
 import React, { Suspense, lazy } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux'
