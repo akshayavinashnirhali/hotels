@@ -29,6 +29,7 @@ class Result extends React.Component {
 
     render() {
         const { location, checkIn, checkOut, activeGuestId } = this.state;
+        const { resultData } = this.props;
 
         return (
             <div className="container-fluid result">
@@ -81,6 +82,7 @@ class Result extends React.Component {
                 </div>
                 <HotelList
                     searchInputs={this.state}
+                    hotelArray={resultData.results}
                 />
             </div>
         );
@@ -88,7 +90,8 @@ class Result extends React.Component {
 }
 
 export default connect((state) => ({
-    homeData: state.home
+    homeData: state.home,
+    resultData: state.result
 }), {
     getHotelResults: resultActions.getHotelResults
 })(Result);

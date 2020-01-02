@@ -64,10 +64,6 @@ class HotelList extends React.Component {
 
 HotelList.defaultProps = {
     searchInputs: {},
-    hotelArray: [
-        { name: 'Oriental Hotel', location: 'Pune', price: '350', rating: 4 },
-        { name: 'Hyat Hotel', location: 'Mumbai', price: '750', rating: 3 },
-        { name: 'Taaj Hotel', location: 'Pune', price: '800', rating: 5 },
-    ]
+    hotelArray: []
 }
 export default HotelList;

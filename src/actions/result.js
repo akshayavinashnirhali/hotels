@@ -1,6 +1,16 @@
 import axios from 'axios';
 import actionTypes from '../constants/actionTypes';
 
+axios.defaults.baseURL = 'https://public-be.oski.io/';
+axios.defaults.headers.common['oski-tenantId'] = 'Demo';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+const dummyData = [
+    { name: 'Oriental Hotel', location: 'Pune', price: '350', rating: 4 },
+    { name: 'Hyat Hotel', location: 'Mumbai', price: '750', rating: 3 },
+    { name: 'Taaj Hotel', location: 'Pune', price: '800', rating: 5 },
+];
+
 const getHotelResultsRequest = () => ({
     type: actionTypes.GET_HOTEL_RESULTS_REQUEST
 });
@@ -60,14 +70,15 @@ const getHotelResults = (searchInputs = {}) => (dispatch) => {
     const config = {
         headers: {
             'oski-tenantId': 'Demo',
-            'Access-Control-Allow-Origin': '*',
-            'X-PINGOTHER': 'pingpong',
-            'Content-Type': 'application/xml'
+            'Content-Type': 'application/json'
         }
     }   
-    axios.post('https://public-be.oski.io/hotel/v1.0/search/results', data, config)
-    .then((response) => dispatch(getHotelResultsSuccess(response)))
-    .catch((error) => dispatch(getHotelResultsError(error)));
+    axios.post('hotel/v1.0/search/results', data, config)
+        .then((response) => dispatch(getHotelResultsSuccess(response)))
+        .catch((error) => {
+            dispatch(getHotelResultsSuccess(dummyData));
+            // dispatch(getHotelResultsError(error)) TODO: remove this comment after final API call success
+        });
 };
 
 export default {
