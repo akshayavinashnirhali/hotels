@@ -48,6 +48,7 @@ class Home extends React.Component {
                             modifier="location"
                             fieldName="location"
                             label="Where are you going?"
+                            placeholder="Enter location"
                             error={isDirty && !location}
                             errorMessage="Please enter location to search hotels"
                             value={location}

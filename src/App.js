@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 import React, { Suspense, lazy } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux'
@@ -19,8 +20,9 @@ const store = createStore(
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
+      <div className="app">
+        <header className="app__header">
+          <a className="app__home-icon-link"></a>
         </header>
         <main>
         <Router history={history}>

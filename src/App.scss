@@ -1,0 +1,16 @@
+.app {
+    &__header {
+        height: 60px;
+        padding: 0 40px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    &__home-icon-link {
+        display: inline-block;
+        width: 90px;
+        height: 55px;
+        background: url(./assets/images/hotelIcon.png) no-repeat;
+        background-size: 80px;
+        background-position: bottom;
+    }
+}

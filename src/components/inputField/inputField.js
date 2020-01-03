@@ -12,7 +12,8 @@ function InputField(props) {
         fieldName,
         customClass,
         error,
-        errorMessage
+        errorMessage,
+        placeholder
     } = props;
     const className = classnames('input', {
         [`input--${modifier}`]: !!modifier,
@@ -28,6 +29,7 @@ function InputField(props) {
             <span className="input__label">{label}</span>
             <input
                 type={type}
+                placeholder={placeholder}
                 className={className}
                 value={value}
                 onChange={(event) => handleChange(fieldName, event.target.value)}
