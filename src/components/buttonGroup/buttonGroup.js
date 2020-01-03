@@ -22,11 +22,16 @@ class ButtonGroup extends React.Component {
     }
 
     render() {
+        const { error, errorMessage } = this.props;
         const buttons = this.createButtons();
+        const errorMessageElement = error && (
+            <span className="button-group__error-message">{errorMessage}</span>
+        );
 
         return (
             <div className="button-group">
                 {buttons}
+                {errorMessageElement}
             </div>
         );
     }

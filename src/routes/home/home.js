@@ -15,6 +15,7 @@ class Home extends React.Component {
             location: '',
             checkIn: '',
             checkOut: '',
+            isDirty: false
         }
     }
 
@@ -27,13 +28,16 @@ class Home extends React.Component {
     }
 
     handleFinalButtonClick = () => {
-        this.props.updateSearchInputs(this.state);
-        console.log(this.state);
-        history.push('/result');
+        const { location, checkIn, checkOut, activeGuestId } = this.state;
+        this.setState({ isDirty: true });
+        if (!!location && !!checkIn && !!checkOut && !!activeGuestId) {
+            this.props.updateSearchInputs(this.state);
+            history.push('/result');
+        }
     }
 
     render() {
-        const { location, checkIn, checkOut, activeGuestId } = this.state;
+        const { location, checkIn, checkOut, activeGuestId, isDirty } = this.state;
 
         return (
             <div className="container-fluid home">
@@ -44,6 +48,8 @@ class Home extends React.Component {
                             modifier="location"
                             fieldName="location"
                             label="Where are you going?"
+                            error={isDirty && !location}
+                            errorMessage="Please enter location to search hotels"
                             value={location}
                             handleChange={this.handleInputsChange}
                         />
@@ -56,6 +62,8 @@ class Home extends React.Component {
                             modifier="calender"
                             fieldName="checkIn"
                             label="Check-in"
+                            error={isDirty && !checkIn}
+                            errorMessage="Please enter check-in date"
                             value={checkIn}
                             handleChange={this.handleInputsChange}
                         />
@@ -66,6 +74,8 @@ class Home extends React.Component {
                             modifier="calender"
                             fieldName="checkOut"
                             label="Check-out"
+                            error={isDirty && !checkOut}
+                            errorMessage="Please enter check-out date"
                             value={checkOut}
                             handleChange={this.handleInputsChange}
                         />
@@ -73,6 +83,8 @@ class Home extends React.Component {
                     <div className="col-md-5">
                         <span className="home__label">Guests</span>
                         <ButtonGroup
+                            error={isDirty && !activeGuestId}
+                            errorMessage="Please select guest numbers"
                             activeId={activeGuestId}
                             buttons={guestButtons}
                             handleButtonClick={this.handleButtonClick}

@@ -10,6 +10,17 @@
     background-repeat: no-repeat;
     color: #888888;
 
+    &__error-message {
+        display: block;
+        margin-top: 5px;
+        color: #fb4b4b;
+        font-size: 12px;
+    }
+
+    &--error {
+        border: 1px solid #fb4b4b;
+    }
+
     &--location {
         background-image: url(../../assets/images/location.png);
     }
